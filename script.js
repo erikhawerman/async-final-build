@@ -334,6 +334,7 @@ const showSendButton = function () {
 };
 // Fyller den interaktiva valideringsbaren 25% för varje fält som är korrekt ifyllt
 const fillValidationBar = function () {
+  if (validatedFields > 4) return;
   validationboxToFill.style.width = `${validatedFields * 25}%`;
   console.log(validationboxToFill.style.width);
 };

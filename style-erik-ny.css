@@ -70,6 +70,7 @@
 }
 .fourth-page {
   text-align: center;
+  min-height: 100vh;
 }
 .social-icons {
   display: inline-block;
