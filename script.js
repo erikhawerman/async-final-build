@@ -211,7 +211,6 @@ var skillPercentage = $(".stapel-procent").map(function () {
 //funktion för att föra in rätt parametrar i barPercentage
 for (let i = 1; i < $(".stapel-procent").length + 1; i++) {
   barPercentage(i, skillPercentage[i - 1]);
-  console.log((i, skillPercentage[i - 1]));
 }
 
 //funktion för att fylla staplarna
@@ -260,8 +259,6 @@ function getXML() {
         .find("project")
         .each(function () {
           const manager = $(this).find("manager").text();
-          console.log(manager);
-
           const title = $(this).find("title").text();
           const customer = $(this).find("customer").text();
           const startDate = $(this).find("startDate").text();
@@ -328,7 +325,10 @@ let validatedFields = 0;
 
 //Gör så att skicka-knappen endast syns om fälten är korrekt ifyllda
 const showSendButton = function () {
-  if (validatedFields === numberOfFields - 1) {
+  if (
+    validatedFields === numberOfFields - 1 ||
+    validatedFields === numberOfFields
+  ) {
     submitButton.style.display = "inline-block";
   } else {
     submitButton.style.display = "none";
@@ -338,7 +338,6 @@ const showSendButton = function () {
 const fillValidationBar = function () {
   if (validatedFields > numberOfFields) return;
   validationboxToFill.style.width = `${validatedFields * 25}%`;
-  console.log(validationboxToFill.style.width);
 };
 // Gör att fältet bli invaliderat
 const invalidateBox = function (box) {
@@ -438,7 +437,6 @@ const validatePhone = function (e) {
 };
 const validateTextArea = function (e) {
   const input = document.getElementById("Kontaktform").value;
-  console.log(input);
   if (!notEmpty.test(input)) {
     invalidateBox(e.target);
     displayErrorBox(errorBoxTextArea, errorIsEmpty);
