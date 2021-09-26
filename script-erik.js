@@ -1,18 +1,23 @@
 $(document).ready(function () {
-  const btnSkills = document.getElementById("vad-jag-kan");
-  const btnMe = document.getElementById("vem-är-jag");
+  const btnMySkills = document.getElementById("vad-jag-kan");
+  const btnWhoAmI = document.getElementById("vem-är-jag");
+  const btnContactMe = document.getElementById("kontakta-mig");
   const secondPage = document.querySelector(".second-page");
   const thirdPage = document.querySelector(".third-page");
+  const fourthPage = document.querySelector(".fourth-page");
   const skills = document.querySelectorAll(".egenskap-container");
 
-  btnSkills.addEventListener("click", function () {
+  btnMySkills.addEventListener("click", function () {
     secondPage.scrollIntoView({ behavior: "smooth" });
   });
-  btnMe.addEventListener("click", function () {
+  btnWhoAmI.addEventListener("click", function () {
     thirdPage.scrollIntoView({ behavior: "smooth" });
   });
+  btnContactMe.addEventListener("click", function () {
+    fourthPage.scrollIntoView({ behavior: "smooth" });
+  });
 
-  //visa egenskaper
+  // Egenskaper callback - visar egenskaper och tar sedan bort observer för högre performance
   const skillCallback = function (entries) {
     entries.forEach(function (e) {
       if (!e.isIntersecting) return;

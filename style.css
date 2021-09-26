@@ -230,12 +230,7 @@ body {
 .project {
   margin: 1.5em 0 1.5em 0;
   width: 60vw;
-  transition: transform 1s;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
-}
-
-.project:hover {
-  transform: scale(1.03);
 }
 
 .fourth-page {
@@ -260,6 +255,27 @@ input {
 .contact-form {
   margin-left: 8%;
 }
+.validationbar-background {
+  position: relative;
+  margin: 0%;
+  width: 80%;
+  height: 2vh;
+  background-color: rgba(105, 105, 105, 0.1);
+  border-radius: 16px;
+}
+#validationbox-to-fill {
+  border-radius: 16px;
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  background-color: rgb(22, 196, 16);
+  top: 0;
+  left: 0;
+}
+
+#submit-form {
+  display: none;
+}
 
 .menu-list-browser {
   display: none;
@@ -283,11 +299,19 @@ input {
   width: 4em;
   height: 4em;
   cursor: pointer;
-  transition: transform 0.5s ease-in-out;
 }
 
-.iconList li img:hover {
-  transform: scale(1.5);
+footer {
+  background-color: #1a1a1d;
+  color: white;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+footer a {
+  text-decoration: none;
+  color: white;
 }
 
 @media screen and (min-width: 763px) {
@@ -385,6 +409,9 @@ input {
   .error {
     font-size: medium;
   }
+  .validationbar-background {
+    width: 20%;
+  }
   .iconList {
     position: absolute;
     right: 10%;
@@ -479,4 +506,12 @@ input {
   opacity: 0;
   transform: translateY(8rem);
   overflow: hidden;
+}
+
+.scale-on-hover {
+  transition: transform 1s;
+}
+
+.scale-on-hover:hover {
+  transform: scale(1.1);
 }

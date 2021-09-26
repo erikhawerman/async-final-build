@@ -228,19 +228,19 @@ const barCallback = function (entries) {
   entries.forEach(function (e) {
     if (!e.isIntersecting) return;
     fillBar(e.target);
-    egenskapsObserver.unobserve(e.target);
+    skillObserver.unobserve(e.target);
   });
 };
 
 //Skapa en observer
-const egenskapsObserver = new IntersectionObserver(barCallback, {
+const skillObserver = new IntersectionObserver(barCallback, {
   root: null,
   threshold: 0.15,
 });
 
 // Fyll staplarna
 Array.from(bars).forEach(function (egenskap) {
-  egenskapsObserver.observe(egenskap);
+  skillObserver.observe(egenskap);
 });
 
 //AJAX
@@ -272,7 +272,7 @@ function getXML() {
           // Skapa html-elementets markup
           let markup = `
           <li>
-              <div class="project">
+              <div class="project scale-on-hover">
                 <img src="images/${image}" alt="" />
                 <div class="facts">
                   <h3>${title}</h3>
@@ -298,11 +298,16 @@ getXML();
 const nameField = document.getElementById("Name");
 const emailField = document.getElementById("e-mail");
 const phoneField = document.getElementById("Phone");
+const textArea = document.getElementById("Kontaktform");
 const errorBoxName = document.getElementById("error-name");
 const errorBoxEmail = document.getElementById("error-e-mail");
 const errorBoxPhone = document.getElementById("error-phone");
+const errorBoxTextArea = document.getElementById("error-text-area");
+// Regular expressions
+const notEmpty = /.+/;
 const containsNumber = /\d/;
 const containsSpecialChars = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/g;
+// Felmeddelanden
 const errorSpecialChar = "Du har skrivit otillåtna tecken";
 const errorTooManyChar =
   "Du har skrivit för många tecken, max antal tecken är 25";
@@ -311,19 +316,56 @@ const errorNotAnEmail = "Email-adressen du angivet är ej giltig";
 const errorNotaNumber = "Du har angivet tecken som ej är siffror";
 const errorContainsNumber =
   "Du har angivet en siffra, endast bokstäver tillåtna";
+const errorIsEmpty = "Text ej angiven";
+//Skicka-knappen
+const submitButton = document.getElementById("submit-form");
+//Valideringsstapeln
+const validationboxToFill = document.getElementById("validationbox-to-fill");
+//Hur många utav fälten som är korrekt ifyllda
+let validatedFields = 0;
 
+//Gör så att skicka-knappen endast syns om fälten är korrekt ifyllda
+const showSendButton = function () {
+  if (validatedFields === 4) {
+    submitButton.style.display = "inline-block";
+  } else {
+    submitButton.style.display = "none";
+  }
+};
+// Fyller den interaktiva valideringsbaren 25% för varje fält som är korrekt ifyllt
+const fillValidationBar = function () {
+  validationboxToFill.style.width = `${validatedFields * 25}%`;
+  console.log(validationboxToFill.style.width);
+};
+// Gör att fältet bli invaliderat
 const invalidateBox = function (box) {
   box.style.border = "2px ridge red";
+  // Om fältet inte redan var validerat ska inte antalet validerade fält minska
+  if (!box.validated) return;
+  box.validated = false;
+  validatedFields--;
+  fillValidationBar();
+  showSendButton();
 };
+// Gör att fältet blir validerat
 const validateBox = function (field, errorBox) {
+  // Tar bort eventuell röd ram runt fältet
   field.style.border = "";
+  // Tar bort eventuellt felmeddelande som stod vid fältet.
   errorBox.style.display = "none";
+  // Om fältet redan var validerat ska inte antalet validerade fält öka.
+  if (field.validated) return;
+  field.validated = true;
+  validatedFields++;
+  fillValidationBar();
+  showSendButton();
 };
+// Gör en röd ram runt det felaktigt ifyllda fältet samt genererar felmeddelande.
 const displayErrorBox = function (box, error) {
   box.style.display = "inline";
   box.innerHTML = error;
 };
-
+// Validera namnfältet
 const validateName = function (e) {
   const input = document.getElementById("Name").value;
 
@@ -391,10 +433,22 @@ const validatePhone = function (e) {
     validateBox(e.target, errorBoxPhone);
   }
 };
+const validateTextArea = function (e) {
+  const input = document.getElementById("Kontaktform").value;
+  console.log(input);
+  if (!notEmpty.test(input)) {
+    invalidateBox(e.target);
+    displayErrorBox(errorBoxTextArea, errorIsEmpty);
+    return;
+  } else {
+    validateBox(e.target, errorBoxTextArea);
+  }
+};
 if (nameField && emailField && phoneField) {
   nameField.addEventListener("focusout", validateName);
   emailField.addEventListener("focusout", validateEmail);
   phoneField.addEventListener("focusout", validatePhone);
+  textArea.addEventListener("focusout", validateTextArea);
 }
 
 // API-fullskärm
@@ -420,7 +474,6 @@ function toggleFullScreen() {
   }
 }
 
-const submitButton = document.getElementById("submit-form");
 //om submit-knappen finns, kör denna kod
 if (submitButton) {
   submitButton.addEventListener("click", function (e) {
@@ -437,9 +490,18 @@ if (submitButton) {
     //spara strängen i localStorage
     localStorage.setItem("formData", formJSON);
   });
-
+}
+window.addEventListener("load", function () {
   //kör bara den här koden om vi har något i localStorage
   if (localStorage.getItem("formData")) {
+    //Validera fälten
+    nameField.validated = true;
+    phoneField.validated = true;
+    emailField.validated = true;
+    textArea.validated = true;
+    validatedFields = 4;
+    fillValidationBar();
+    showSendButton();
     //hämta strängen från localStorage, och parsea den till ett objekt
     const localStorageToParse = localStorage.getItem("formData");
     const savedData = JSON.parse(localStorageToParse);
@@ -449,4 +511,4 @@ if (submitButton) {
     $("#e-mail").val(savedData.mail);
     $("#Kontaktform").val(savedData.message);
   }
-}
+});

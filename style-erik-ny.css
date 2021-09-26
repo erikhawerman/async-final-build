@@ -21,7 +21,7 @@
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 90%;
   padding: 14px 13px;
   margin-top: 25%;
 }
@@ -86,6 +86,7 @@
   }
   .myButton {
     margin-top: 3%;
+    font-size: 100%;
   }
   #erik-vector {
     max-width: 20%;
@@ -118,15 +119,22 @@
   }
   .social-icons {
     display: inline-block;
-    width: 15%;
+    width: 10%;
     /* margin: 2%; */
-    margin: 2% 10% 2% 10%;
+    margin: 4% 7% 2% 7%;
   }
   .fourth-page p {
     width: 15%;
   }
+  .paragraph-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -5em;
+  }
 }
-footer {
+/* footer {
   background-color: #1a1a1d;
   color: white;
   text-align: center;
@@ -134,10 +142,7 @@ footer {
 footer a {
   text-decoration: none;
   color: white;
-}
-.vadsomhelst {
-  display: none;
-}
+} */
 .stapel-procent {
   display: none;
 }
