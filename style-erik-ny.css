@@ -68,6 +68,14 @@
   width: 85%;
   height: auto;
 }
+.fourth-page {
+  text-align: center;
+}
+.social-icons {
+  display: inline-block;
+  width: 30%;
+  margin: 3%;
+}
 @media screen and (min-width: 800px) {
   .first-page h1 {
     padding-top: 2%;
@@ -107,6 +115,15 @@
   .egenskap-container img {
     width: 75%;
     height: 80%;
+  }
+  .social-icons {
+    display: inline-block;
+    width: 15%;
+    /* margin: 2%; */
+    margin: 2% 10% 2% 10%;
+  }
+  .fourth-page p {
+    width: 15%;
   }
 }
 footer {

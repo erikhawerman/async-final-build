@@ -36,29 +36,18 @@ body {
   }
 }
 
-
-
-
-
-
-
 .first-page {
   text-align: center;
   min-height: 100vh;
-  
 }
-
-
 
 .socialList {
   list-style-type: none;
-  
 }
 
 .socialList li {
   margin: 5%;
 }
-
 
 .socialList li img {
   width: 7em;
@@ -71,7 +60,6 @@ body {
   transform: scale(1.5);
 }
 
-
 h2,
 q,
 h3,
@@ -83,37 +71,30 @@ li {
 }
 
 .header {
- 
   width: 100%;
 }
 
-.aboutMe{
+.aboutMe {
   padding: 10%;
 }
-
 
 .bild1 {
   border-radius: 50%;
   height: 25vh;
 }
 
-
 .profilBild {
   height: 30vh;
-  
 }
-
 
 .second-page {
   text-align: center;
   min-height: 100vh;
-  
+
   background-color: white;
 }
 
-.kunskapsLåda
- {
-  
+.kunskapsLåda {
   height: auto;
   width: 40%;
   margin: auto;
@@ -126,88 +107,76 @@ li {
   padding: 10%;
 }
 
-#skills, #hittaMig {
+#skills,
+#hittaMig {
   color: white;
   background-color: black;
   width: 35%;
   height: 5vh;
-  
 }
 
 .third-page {
-min-height: 100vh;
-text-align: center;
+  min-height: 100vh;
+  text-align: center;
 }
 
-
- .sqlBar,
- .htmlBar,
- .javaBar,
- .jsBar,
- .cssBar {
+.sqlBar,
+.htmlBar,
+.javaBar,
+.jsBar,
+.cssBar {
   height: 100%;
   width: 0;
   background-color: #950740;
 }
 
-
 .kontakt {
   background-color: gray;
   width: 100%;
-  
 }
 
 .contact {
   font-size: 18px;
   text-align: left;
   color: white;
-  
 }
 
 .secondHeader {
   color: black;
 }
 
-
-
-
-.mailLink, .faceInsta {
+.mailLink,
+.faceInsta {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 10%;
-
 }
 @media screen and (min-width: 768px) {
-  .jsSql, .javaHtml, .css{
+  .jsSql,
+  .javaHtml,
+  .css {
     display: inline-block;
     width: 25%;
     margin: 10% 10% 8% 10%;
-    
-  
-}
+  }
 
-.css{ 
-  margin-top: 0;
-}
+  .css {
+    margin-top: 0;
+  }
 
-.kunskapsLåda {
-  width: 100%;
-    
-}
+  .kunskapsLåda {
+    width: 100%;
+  }
 
-.aboutMe {
-  width: 50%;
-  margin: auto;
-  padding: 3%;
-}
+  .aboutMe {
+    width: 50%;
+    margin: auto;
+    padding: 3%;
+  }
 
-.knappar {
-  
-  width: 60%;
-  margin: auto;
-}
-
-
-
+  .knappar {
+    width: 60%;
+    margin: auto;
+  }
 }
