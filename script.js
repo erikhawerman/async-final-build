@@ -321,12 +321,14 @@ const errorIsEmpty = "Text ej angiven";
 const submitButton = document.getElementById("submit-form");
 //Valideringsstapeln
 const validationboxToFill = document.getElementById("validationbox-to-fill");
+// Hur många fält det finns
+const numberOfFields = 4;
 //Hur många utav fälten som är korrekt ifyllda
 let validatedFields = 0;
 
 //Gör så att skicka-knappen endast syns om fälten är korrekt ifyllda
 const showSendButton = function () {
-  if (validatedFields === 4) {
+  if (validatedFields === numberOfFields - 1) {
     submitButton.style.display = "inline-block";
   } else {
     submitButton.style.display = "none";
@@ -334,7 +336,7 @@ const showSendButton = function () {
 };
 // Fyller den interaktiva valideringsbaren 25% för varje fält som är korrekt ifyllt
 const fillValidationBar = function () {
-  if (validatedFields > 4) return;
+  if (validatedFields > numberOfFields) return;
   validationboxToFill.style.width = `${validatedFields * 25}%`;
   console.log(validationboxToFill.style.width);
 };
@@ -479,6 +481,13 @@ function toggleFullScreen() {
 if (submitButton) {
   submitButton.addEventListener("click", function (e) {
     e.preventDefault();
+    if (validatedFields !== numberOfFields) {
+      if (nameField.validated !== true) invalidateBox(nameField);
+      if (phoneField.validated !== true) invalidateBox(phoneField);
+      if (emailField.validated !== true) invalidateBox(emailField);
+      if (textArea.validated !== true) invalidateBox(textArea);
+      return;
+    }
     //spara datan från inputesn i ett objekt
     const formData = {
       name: $("#Name").val(),
@@ -500,7 +509,7 @@ window.addEventListener("load", function () {
     phoneField.validated = true;
     emailField.validated = true;
     textArea.validated = true;
-    validatedFields = 4;
+    validatedFields = numberOfFields;
     fillValidationBar();
     showSendButton();
     //hämta strängen från localStorage, och parsea den till ett objekt
