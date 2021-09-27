@@ -440,7 +440,7 @@ footer a {
   transform: scale(1.1);
 }
 
-#submit-form {
+.button {
   background-color: transparent;
   display: inline-block;
   cursor: pointer;
@@ -449,9 +449,10 @@ footer a {
   padding: 14px 13px;
   margin-top: 5%;
   border-radius: 20px;
-  min-width: 35vw;
+  /* min-width: 35vw; */
   /* height: 5vh; */
+  width: 259px;
 }
-#submit-form:hover {
+.button:hover {
   font-weight: 900;
 }
