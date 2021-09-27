@@ -137,6 +137,7 @@ body {
   width: 40%;
   height: 20vh;
   background-color: rgba(105, 105, 105, 0.1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
 
 .skillbox-text-container {
@@ -290,6 +291,7 @@ input {
   height: 2vh;
   background-color: rgba(105, 105, 105, 0.1);
   border-radius: 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
 #validationbox-to-fill {
   border-radius: 16px;
@@ -436,4 +438,20 @@ footer a {
 
 .scale-on-hover:hover {
   transform: scale(1.1);
+}
+
+#submit-form {
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  color: black;
+  font-size: 90%;
+  padding: 14px 13px;
+  margin-top: 5%;
+  border-radius: 20px;
+  min-width: 35vw;
+  /* height: 5vh; */
+}
+#submit-form:hover {
+  font-weight: 900;
 }

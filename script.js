@@ -479,11 +479,14 @@ $(document).ready(function () {
   if (submitButton) {
     submitButton.addEventListener("click", function (e) {
       e.preventDefault();
+      console.log(validatedFields);
+      console.log(numberOfFields);
       if (validatedFields !== numberOfFields) {
         if (nameField.validated !== true) invalidateBox(nameField);
         if (phoneField.validated !== true) invalidateBox(phoneField);
         if (emailField.validated !== true) invalidateBox(emailField);
         if (textArea.validated !== true) invalidateBox(textArea);
+        alert("Uppgifter saknas");
         return;
       }
       //spara datan från inputesn i ett objekt
@@ -497,6 +500,8 @@ $(document).ready(function () {
       const formJSON = JSON.stringify(formData);
       //spara strängen i localStorage
       localStorage.setItem("formData", formJSON);
+      //Bekräfta för användaren att formuläret skickats korrekt.
+      alert("Tack för ditt meddelande! Vi hör av oss så fort vi kan.");
     });
 
     window.addEventListener("load", function () {
@@ -506,8 +511,8 @@ $(document).ready(function () {
         nameField.validated = true;
         phoneField.validated = true;
         emailField.validated = true;
-        textArea.validated = true;
-        validatedFields = numberOfFields;
+        textArea.validated = false;
+        validatedFields = numberOfFields - 1;
         fillValidationBar();
         showSendButton();
         //hämta strängen från localStorage, och parsea den till ett objekt
@@ -517,7 +522,6 @@ $(document).ready(function () {
         $("#Name").val(savedData.name);
         $("#Phone").val(savedData.phone);
         $("#e-mail").val(savedData.mail);
-        $("#Kontaktform").val(savedData.message);
       }
     });
   }
