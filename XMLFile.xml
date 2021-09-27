@@ -3,52 +3,52 @@
 
     <project id="p1">
         <manager>Andreas Andersson</manager>
-        <title>Learning XML</title>
-        <customer>The university</customer>
+        <title>Läran om XML</title>
+        <customer>Örebros Universitet</customer>
         <startDate>2021-09-01</startDate>
         <endDate>2021-09-30</endDate>
         <image>projekt-1-xml.png</image>
-        <description>An indepth look at creating applications with XML.</description>
+        <description>En ytlig beskrivning om vad XML handlar om, och hur det tillämpas.</description>
  </project>
 
      <project id="p2">
         <manager>Scott Jander</manager>
-        <title>Testkör XML</title>
-        <customer>Erik, Robin &amp; Hampus</customer>
-        <startDate>2021-09-01</startDate>
-        <endDate>2021-09-30</endDate>
+        <title>Samarbeta i vardagen</title>
+        <customer>Facebook</customer>
+        <startDate>2018-11-26</startDate>
+        <endDate>2019-01-27</endDate>
         <image>projekt-2-network.png</image>
-        <description>Övning på hur XML Fungerar</description>
+        <description>Fördelarna med digitala samarbeten i vardagen.</description>
      </project>
 
     <project id="p3">
         <manager>Robin Aziz</manager>
-        <title>Snabbkurs i divar</title>
-        <customer>Erik, Hampus &amp; Scott</customer>
-        <startDate>2021-09-01</startDate>
-        <endDate>2021-09-30</endDate>
+        <title>Men In Black</title>
+        <customer>MIB Skandinavien</customer>
+        <startDate>2021-05-04</startDate>
+        <endDate>2021-07-30</endDate>
         <image>projekt-3-MiB.jpg</image>
-        <description>Såhär skriver du HTML</description>
+        <description>Utveckling av applikation för att lagra information om aliens.</description>
      </project>
 
        <project id="4">
-            <manager>Kai Wistrand &amp; Andreas Ask </manager>
-            <title>Men In Black</title>
-            <customer>Men In Black Skandinavien</customer>
+            <manager>Robin Aziz</manager>
+            <title>Html5</title>
+            <customer>Lund Universitet</customer>
             <startDate>2021-04-30</startDate>
             <endDate>2021-05-30</endDate>
             <image>projekt-4-div.png</image>
-            <description>Utveckling av applikation för att lagra information om aliens.</description>
+            <description>Snabbkurs inom Html's alla element.</description>
         </project>
         
                <project id="5">
             <manager>Erik Hawerman</manager>
             <title>Delegering</title>
-            <customer>Hampus, Scott &amp; Robin</customer>
-            <startDate>2021-09-15</startDate>
-            <endDate>2021-09-30</endDate>
+            <customer>ManPower</customer>
+            <startDate>2020-10-17</startDate>
+            <endDate>2020-11-28</endDate>
             <image>xml2.png</image>
-            <description>Erik visar hur man delegerar</description>
+            <description>Delegera jobb på ett ansvarsfullt sätt.</description>
         </project>
         
 

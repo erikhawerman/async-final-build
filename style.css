@@ -170,7 +170,6 @@ body {
 .skillbox-to-fill {
   height: 100%;
   width: 0%;
-  /* background-color: rgba(149, 7, 64, 0.6); */
   background-color: #950740;
 }
 
@@ -181,7 +180,6 @@ body {
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
-  /* box-shadow: 0 0 0 1px #1a1a1d; */
   height: 100%;
 }
 .skillbox-text-container h4 {
@@ -194,11 +192,6 @@ body {
   font-size: 2em;
   font-weight: 900;
 }
-.skillbox-text-container p {
-  /* position: absolute;
-  bottom: 0; */
-}
-
 .third-page {
   text-align: center;
   height: fit-content;
@@ -208,6 +201,66 @@ body {
 #third-page::backdrop {
   background-color: #1a1a1d;
 }
+
+/* SLIDER */
+
+.slider {
+  width: 100%;
+  height: 50vh;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slide {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 1s;
+}
+.slide > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slide1 {
+  z-index: 2;
+}
+
+.btn-pause {
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+  width: 0;
+  height: 74px;
+
+  border-color: transparent transparent transparent #202020;
+  transition: 100ms all ease;
+  cursor: pointer;
+  position: absolute;
+  z-index: 5;
+  display: none;
+}
+
+.play {
+  border-style: solid;
+  border-width: 37px 0 37px 60px;
+}
+
+.paused {
+  border-style: double;
+  border-width: 0px 0 0px 60px;
+}
+/* Slut på slider */
 
 .projectbackground {
   text-align: center;
@@ -254,11 +307,15 @@ input {
 }
 .contact-form {
   margin-left: 8%;
+  width: 40%;
+}
+#Kontaktform {
+  resize: none;
 }
 .validationbar-background {
   position: relative;
   margin: 0%;
-  width: 80%;
+  width: 259px;
   height: 2vh;
   background-color: rgba(105, 105, 105, 0.1);
   border-radius: 16px;
@@ -285,20 +342,17 @@ input {
   width: 25%;
   height: auto;
 }
-.iconList {
+.icon-container {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20vh;
   text-align: center;
+  margin-top: 5%;
 }
-
-.iconList li {
-  display: inline-block;
-  margin-top: 20%;
-  margin-left: 5%;
-}
-
-.iconList li img {
-  width: 4em;
-  height: 4em;
-  cursor: pointer;
+.social-icons {
+  width: 20%;
+  margin: 1%;
 }
 
 footer {
@@ -308,6 +362,7 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: fit-content;
 }
 footer a {
   text-decoration: none;
@@ -409,97 +464,19 @@ footer a {
   .error {
     font-size: medium;
   }
-  .validationbar-background {
-    width: 20%;
+  .contact-form {
+    display: inline-block;
+    vertical-align: top;
   }
-  .iconList {
-    position: absolute;
-    right: 10%;
-    top: 25%;
-    width: 60%;
-    height: fit-content;
-  }
-
-  .iconList li {
+  .icon-container {
+    display: inline-block;
     width: 40%;
-    padding: 0%;
-    margin: 2%;
+    margin-top: 0;
   }
-  .iconList li img {
-    margin: 0%;
-    padding: 0%;
-    width: 30%;
-    height: auto;
+  .social-icons {
+    width: 25%;
+    margin: 0 10% 10% 10%;
   }
-}
-
-/* .skillbox-container{
-  display: flex;
-  width: 49%;
-  float: left;
-}
-.skillbox-background{
-  width: 50%;
-  margin: 0 1em 10vh 1em;
-} */
-
-/* SLIDER */
-
-.slider {
-  width: 100%;
-  height: 50vh;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.slide {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition: transform 1s;
-}
-.slide > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.slide1 {
-  z-index: 2;
-}
-
-.btn-pause {
-  border: 0;
-  background: transparent;
-  box-sizing: border-box;
-  width: 0;
-  height: 74px;
-
-  border-color: transparent transparent transparent #202020;
-  transition: 100ms all ease;
-  cursor: pointer;
-  position: absolute;
-  z-index: 5;
-  display: none;
-}
-
-.play {
-  border-style: solid;
-  border-width: 37px 0 37px 60px;
-}
-
-.paused {
-  border-style: double;
-  border-width: 0px 0 0px 60px;
 }
 
 .hidden {

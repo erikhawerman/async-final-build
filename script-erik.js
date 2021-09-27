@@ -1,12 +1,13 @@
 $(document).ready(function () {
-  const btnMySkills = document.getElementById("vad-jag-kan");
-  const btnWhoAmI = document.getElementById("vem-är-jag");
-  const btnContactMe = document.getElementById("kontakta-mig");
+  const btnMySkills = document.getElementById("my-skills");
+  const btnWhoAmI = document.getElementById("who-am-i");
+  const btnContactMe = document.getElementById("contact-me");
   const secondPage = document.querySelector(".second-page");
   const thirdPage = document.querySelector(".third-page");
   const fourthPage = document.querySelector(".fourth-page");
-  const skills = document.querySelectorAll(".egenskap-container");
+  const attributes = document.querySelectorAll(".attribute-container");
 
+  // Gör att varje knapp lysnar efter att bli klickad på och skrollar då ner sidan till sin sida.
   btnMySkills.addEventListener("click", function () {
     secondPage.scrollIntoView({ behavior: "smooth" });
   });
@@ -18,19 +19,20 @@ $(document).ready(function () {
   });
 
   // Egenskaper callback - visar egenskaper och tar sedan bort observer för högre performance
-  const skillCallback = function (entries) {
+  const attributeCallback = function (entries) {
     entries.forEach(function (e) {
       if (!e.isIntersecting) return;
       e.target.classList.remove("hidden");
       observeSkills.unobserve(e.target);
     });
   };
-  const observeSkills = new IntersectionObserver(skillCallback, {
+  // Observer som letar att objekten som observeras och anropar callback-funktionen vid 15% korsning.
+  const observeAttributes = new IntersectionObserver(attributeCallback, {
     root: null,
     threshold: 0.15,
   });
-
-  skills.forEach(function (skill) {
-    observeSkills.observe(skill);
+  // Loopar igenom alla egenskaper och ber observern att observera samtliga element.
+  attributes.forEach(function (attribute) {
+    observeAttributes.observe(attribute);
   });
 });

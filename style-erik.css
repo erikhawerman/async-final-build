@@ -1,0 +1,141 @@
+.first-page {
+  display: block;
+}
+.first-page h1 {
+  margin: 10%;
+  font-size: 1.5em;
+  padding-top: 20%;
+}
+.first-page p {
+  margin-top: 2%;
+  margin-bottom: 4%;
+}
+#erik-vector {
+  width: 50%;
+  height: auto;
+}
+.myButton {
+  background-color: transparent;
+  border: 1px solid;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 90%;
+  padding: 14px 13px;
+  margin-top: 25%;
+}
+.myButton:hover {
+  font-weight: 900;
+}
+.second-page p {
+  margin-top: 5%;
+  font-weight: 600;
+  text-align: start;
+}
+.stapel {
+  display: inline-block;
+  width: 60%;
+  height: 15px;
+  background-color: lightgrey;
+  border: 2px black solid;
+  border-radius: 16px;
+  margin-top: 7%;
+}
+.stapel-background {
+  border-radius: 16px;
+  display: block;
+  width: 0%;
+  height: 100%;
+  background-color: #6f2232;
+}
+.skill {
+  width: 25%;
+  height: 25%;
+  border-radius: 50%;
+  border: #1a1a1d 2px solid;
+  margin-top: 10%;
+}
+.attribute-container {
+  width: 49%;
+  height: auto;
+  text-align: center;
+  display: inline-block;
+  margin: 0 0.5% 5% 0.5%;
+  transition: transform 1s, opacity 1s;
+}
+.attribute-container img {
+  width: 85%;
+  height: auto;
+}
+.fourth-page {
+  text-align: center;
+  min-height: 100vh;
+}
+.social-icons {
+  display: inline-block;
+  width: 30%;
+  margin: 3%;
+}
+@media screen and (min-width: 763px) {
+  .first-page h1 {
+    padding-top: 2%;
+    margin: 0;
+  }
+  .first-page p {
+    font-size: larger;
+  }
+  .myButton {
+    margin-top: 3%;
+    font-size: 100%;
+  }
+  #erik-vector {
+    max-width: 20%;
+  }
+  .skill-container {
+    display: inline-block;
+    width: 20%;
+    height: auto;
+  }
+  .skill {
+    width: 40%;
+  }
+  .stapel {
+    margin-top: 4%;
+  }
+  #thirdPage h1 {
+    padding-top: 5%;
+    font-size: 350%;
+    padding-bottom: 2%;
+  }
+  .attribute-container {
+    display: inline-block;
+    width: 40%;
+    height: 30vh;
+    padding: 0;
+  }
+  .attribute-container img {
+    width: 75%;
+    height: 80%;
+  }
+  .fourth-page p {
+    width: 15%;
+  }
+  .paragraph-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -5em;
+  }
+  .icon-container {
+    width: 100%;
+  }
+  .social-icons {
+    display: inline-block;
+    width: 10%;
+    margin: 4% 7% 2% 7%;
+  }
+}
+.stapel-procent {
+  display: none;
+}

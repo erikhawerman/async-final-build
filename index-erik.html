@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="style-erik-ny.css" />
+    <link rel="stylesheet" href="style-erik.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,38 +16,36 @@
     <title>Document</title>
   </head>
   <body>
+    <!-- Här börjar första sidan -->
     <div class="first-page">
       <div class="navbar">
         <a href="index.html">
-          <img
-            class="logo"
-            src="images/logo-async.png"
-            alt="placeholder-logo"
-          />
+          <img class="logo" src="images/logo-async.png" alt="logo" />
         </a>
       </div>
       <h1>Erik Hawerman <br />Designer, Front-end Developer</h1>
       <p>Jag designar och kodar</p>
       <div class="img-container">
-        <img id="erik-vector" src="images/Erik.png" alt="" />
+        <img id="erik-vector" src="images/Erik.png" alt="Erik" />
       </div>
-      <button class="myButton" id="vad-jag-kan">
+      <button class="myButton" id="my-skills">
         <span>Vad jag kan</span>
       </button>
-      <button class="myButton" id="vem-är-jag">
+      <button class="myButton" id="who-am-i">
         <span>Vem är jag</span>
       </button>
-      <button class="myButton" id="kontakta-mig">
+      <button class="myButton" id="contact-me">
         <span>Kontakta mig</span>
       </button>
     </div>
+    <!-- Här börjar andra sidan -->
     <div class="second-page">
       <h1 class="title-new-page">Vad jag kan</h1>
       <div class="skill-container">
         <img class="skill scale-on-hover" src="images/js.png" alt="" />
         <h2>Javascript</h2>
         <div class="stapel">
-          <div class="ifylldstapel1 skillbox-to-fill">
+          <div class="stapel-background skillbox-to-fill">
             <span class="stapel-procent">90</span>
           </div>
           <p>
@@ -60,7 +58,7 @@
         <img class="skill scale-on-hover" src="images/html.png" alt="" />
         <h2>HTML</h2>
         <div class="stapel">
-          <div class="ifylldstapel1 skillbox-to-fill">
+          <div class="stapel-background skillbox-to-fill">
             <span class="stapel-procent">90</span>
           </div>
           <p>
@@ -74,7 +72,7 @@
         <img class="skill scale-on-hover" src="images/css.jpeg" alt="" />
         <h2>CSS</h2>
         <div class="stapel">
-          <div class="ifylldstapel1 skillbox-to-fill">
+          <div class="stapel-background skillbox-to-fill">
             <span class="stapel-procent">90</span>
           </div>
           <p>
@@ -83,29 +81,18 @@
           </p>
         </div>
       </div>
-      <!-- <div class="skill-container">
-        <img class="skill" src="java.png" alt="" />
-        <h2>Java</h2>
-        <div class="stapel">
-          <div class="ifylldstapel1"></div>
-          <p>
-            Jag har gått utbildning i java och kan hantera språket måttligt. Har
-            skrivit ett flertal projekt i språket och ser fram emot att få
-            skriva flera.
-          </p>
-        </div>
-      </div> -->
     </div>
+    <!-- Här börjar tredje sidan -->
     <div class="third-page">
       <h1 class="title-new-page">Vem är jag</h1>
-      <div class="egenskap-container hidden" id="egenskap1">
+      <div class="attribute-container hidden" id="egenskap1">
         <img src="images/web-designer.webp" class="scale-on-hover" alt="" />
         <h2>Web-designer</h2>
         <p>
           Jag är en webbutvecklare med höga ambitioner och ett öga för design.
         </p>
       </div>
-      <div class="egenskap-container hidden" id="egenskap2">
+      <div class="attribute-container hidden" id="egenskap2">
         <img src="images/projektledare.webp" class="scale-on-hover" alt="" />
         <h2>Projektledare</h2>
         <p>
@@ -113,14 +100,14 @@
           gruppsamverkan.
         </p>
       </div>
-      <div class="egenskap-container hidden" id="egenskap3">
+      <div class="attribute-container hidden" id="egenskap3">
         <img src="images/programmer.webp" class="scale-on-hover" alt="" />
         <h2>Kodare</h2>
         <p>
           Jag älskar problemlösning på alla nivåer och hittar alltid en lösning.
         </p>
       </div>
-      <div class="egenskap-container hidden" id="egenskap4">
+      <div class="attribute-container hidden" id="egenskap4">
         <img src="images/ekonomi.webp" class="scale-on-hover" alt="" />
         <h2>Ekonom</h2>
         <p>
@@ -129,6 +116,7 @@
         </p>
       </div>
     </div>
+    <!-- Här börjar fjärde sidan -->
     <div class="fourth-page page-to-dim" id="fourth-page">
       <h1 class="title-new-page">Kontakta mig</h1>
       <div class="paragraph-container">
@@ -141,30 +129,33 @@
           meddelande till mig.
         </p>
       </div>
-      <a href="https://twitter.com/"
-        ><img
-          class="social-icons scale-on-hover"
-          src="images/twitter.png"
-          alt="Twitter Logo"
-      /></a>
-      <a href="https://www.facebook.com/erik.hawerman/"
-        ><img
-          class="social-icons scale-on-hover"
-          src="images/facebook.webp"
-          alt="Facebook Logo"
-      /></a>
-      <a href="https://se.linkedin.com/in/erik-hawerman-674209ba"
-        ><img
-          class="social-icons scale-on-hover"
-          src="images/Linked.png"
-          alt="LinkedIn Logo"
-      /></a>
-      <a href="https://www.instagram.com/erikhawerman/"
-        ><img
-          class="social-icons scale-on-hover"
-          src="images/instagram.png"
-          alt="Instagram Logo"
-      /></a>
+      <!-- Sociala medier container -->
+      <div class="icon-container">
+        <a href="https://twitter.com/"
+          ><img
+            class="social-icons scale-on-hover"
+            src="images/twitter.png"
+            alt="Twitter Logo"
+        /></a>
+        <a href="https://www.facebook.com/erik.hawerman/"
+          ><img
+            class="social-icons scale-on-hover"
+            src="images/facebook.webp"
+            alt="Facebook Logo"
+        /></a>
+        <a href="https://se.linkedin.com/in/erik-hawerman-674209ba"
+          ><img
+            class="social-icons scale-on-hover"
+            src="images/Linked.png"
+            alt="LinkedIn Logo"
+        /></a>
+        <a href="https://www.instagram.com/erikhawerman/"
+          ><img
+            class="social-icons scale-on-hover"
+            src="images/instagram.png"
+            alt="Instagram Logo"
+        /></a>
+      </div>
       <footer>
         Erik Hawerman, ©2021 <br /><a href="mailto:erik.hawerman@gmail.com"
           >erik.hawerman@gmail.com</a

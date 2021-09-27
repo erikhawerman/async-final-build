@@ -5,6 +5,7 @@
 }
 .name-written {
   height: 2em;
+  font-size: 1.5em;
 }
 .skillbox-container {
   display: inline-block;
@@ -31,6 +32,9 @@
   width: inherit;
   text-align: center;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .skillbox-container h3 {
   margin-top: 3vh;
@@ -44,6 +48,7 @@
   display: inline-block;
   width: 100%;
   height: auto;
+  margin-bottom: 20vh;
 }
 .socials-img-scott {
   width: 100%;
@@ -56,7 +61,7 @@
 .information-box {
   position: absolute;
   width: 100vw;
-  height: 7vh;
+  height: fit-content;
   background-color: rgba(158, 158, 158, 0.1);
   bottom: 0;
   text-align: center;
