@@ -23,7 +23,8 @@ $(document).ready(function () {
     entries.forEach(function (e) {
       if (!e.isIntersecting) return;
       e.target.classList.remove("hidden");
-      observeSkills.unobserve(e.target);
+      console.log(e.target);
+      observeAttributes.unobserve(e.target);
     });
   };
   // Observer som letar att objekten som observeras och anropar callback-funktionen vid 15% korsning.

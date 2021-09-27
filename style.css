@@ -36,18 +36,8 @@ body {
   color: white;
   cursor: pointer;
 }
-.menu-list li a {
-  cursor: pointer;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  font-weight: 700;
-}
-.menu-list li a:hover {
-  background-color: var(--color-primary);
-  color: black;
+.menu-list-browser {
+  display: none;
 }
 .logo {
   height: auto;
@@ -56,24 +46,8 @@ body {
   top: 0;
   position: absolute;
   margin: 1em;
-  transition-property: transform;
-  transition-duration: 1s;
-}
-.logo:hover {
-  animation-name: rotate;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .burger-icon {
   display: block;
   position: absolute;
@@ -121,13 +95,12 @@ body {
   background-color: white;
   width: 100%;
 }
-.second-page h6 {
-  font-style: italic;
-}
-
 .title-new-page {
   padding-top: 8vh;
   margin: 10%;
+}
+.second-page h6 {
+  font-style: italic;
 }
 
 .team-presentation {
@@ -142,16 +115,15 @@ body {
   width: 30%;
   margin: 1em;
 }
-.team-presentation-paragraph {
-  width: 60vw;
-}
 .profile-photo {
   width: 100%;
   height: 100%;
   border-radius: 50%;
   box-shadow: 0 0 3px 3px #1a1a1d;
 }
-
+.team-presentation-paragraph {
+  width: 60vw;
+}
 .skillbox-container {
   display: flex;
   justify-content: center;
@@ -165,12 +137,6 @@ body {
   width: 40%;
   height: 20vh;
   background-color: rgba(105, 105, 105, 0.1);
-}
-
-.skillbox-to-fill {
-  height: 100%;
-  width: 0%;
-  background-color: #950740;
 }
 
 .skillbox-text-container {
@@ -192,14 +158,16 @@ body {
   font-size: 2em;
   font-weight: 900;
 }
+.skillbox-to-fill {
+  height: 100%;
+  width: 0%;
+  background-color: #950740;
+}
 .third-page {
   text-align: center;
   height: fit-content;
   min-height: 100vh;
   color: white;
-}
-#third-page::backdrop {
-  background-color: #1a1a1d;
 }
 
 /* SLIDER */
@@ -232,6 +200,7 @@ body {
   height: 100%;
   object-fit: cover;
 }
+/* Gör att första bilden i slidern visas först */
 .slide1 {
   z-index: 2;
 }
@@ -262,6 +231,7 @@ body {
 }
 /* Slut på slider */
 
+/* Här börjar XML-stylingen */
 .projectbackground {
   text-align: center;
   display: flex;
@@ -285,6 +255,7 @@ body {
   width: 60vw;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
+/* Här slutar XML-stylingen */
 
 .fourth-page {
   text-align: left;
@@ -296,6 +267,10 @@ body {
 .fourth-page h1 {
   text-align: center;
 }
+.contact-form {
+  margin-left: 8%;
+  width: 40%;
+}
 input {
   display: block;
 }
@@ -304,10 +279,6 @@ input {
   width: fit-content;
   border: 1px ridge rgba(0, 0, 0, 0.384);
   font-size: smaller;
-}
-.contact-form {
-  margin-left: 8%;
-  width: 40%;
 }
 #Kontaktform {
   resize: none;
@@ -332,15 +303,6 @@ input {
 
 #submit-form {
   display: none;
-}
-
-.menu-list-browser {
-  display: none;
-}
-.group-name {
-  margin-top: 8em;
-  width: 25%;
-  height: auto;
 }
 .icon-container {
   display: block;
@@ -404,36 +366,18 @@ footer a {
   .mobile-menu {
     display: none;
   }
-  .menu-list li a {
-    cursor: pointer;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: 700;
-  }
   .burger-icon {
     display: none;
   }
-
   .first-page {
     text-align: center;
-  }
-
-  .group-name {
-    margin-top: 8em;
-    width: 25%;
-    height: auto;
   }
   .title-new-page {
     margin: 0 15% 7.5% 15%;
   }
-
   .second-page {
     display: inline-block;
   }
-
   .team-presentation {
     display: inline-block;
     vertical-align: top;
@@ -441,7 +385,6 @@ footer a {
     width: 20%;
     max-width: 45%;
   }
-
   .profile-photo-container {
     display: inline-block;
     width: 70%;
@@ -449,6 +392,7 @@ footer a {
   .team-presentation-paragraph {
     width: auto;
   }
+  /* Här börjar XML-stylingen */
   .projectlist li {
     text-align: center;
     margin: 0 2em 0 2em;
@@ -458,15 +402,16 @@ footer a {
   .project {
     width: 10vw;
   }
+  /* Här slutar XML-stylingen */
+  .contact-form {
+    display: inline-block;
+    vertical-align: top;
+  }
   input {
     display: inline;
   }
   .error {
     font-size: medium;
-  }
-  .contact-form {
-    display: inline-block;
-    vertical-align: top;
   }
   .icon-container {
     display: inline-block;

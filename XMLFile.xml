@@ -2,13 +2,13 @@
 <projects>
 
     <project id="p1">
-        <manager>Andreas Andersson</manager>
-        <title>Läran om XML</title>
+        <manager>Hampus Johansson</manager>
+        <title>XML i ett nötskal</title>
         <customer>Örebros Universitet</customer>
         <startDate>2021-09-01</startDate>
         <endDate>2021-09-30</endDate>
         <image>projekt-1-xml.png</image>
-        <description>En ytlig beskrivning om vad XML handlar om, och hur det tillämpas.</description>
+        <description>En hisspitch på varför XML fortfarande är relevant och bör användas.</description>
  </project>
 
      <project id="p2">

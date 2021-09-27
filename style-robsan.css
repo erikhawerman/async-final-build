@@ -1,3 +1,4 @@
+
 .first-page {
   display: block;
 }
@@ -13,7 +14,9 @@
 .socialList li img {
   width: 7em;
   height: 7em;
+  
 }
+
 
 li {
   color: white;
@@ -74,8 +77,9 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10%;
+  margin-top: 10vh;
 }
+
 
 .stapel-procent {
   display: none;
@@ -89,10 +93,7 @@ li {
     margin: 10% 10% 8% 10%;
   }
 
-  .css {
-    margin-top: 0;
-  }
-
+ 
   .kunskapsLada {
     width: 100%;
   }
@@ -106,6 +107,7 @@ li {
   .knappar {
     width: 60%;
     margin: auto;
+    margin-top: 10%;
   }
 
   .kunskaper li {
@@ -113,8 +115,5 @@ li {
     width: 30%;
     margin-top: 9%;
     margin-left: 5%;
-  }
-  .socialList {
-    margin-top: -5%;
   }
 }
