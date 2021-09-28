@@ -75,6 +75,9 @@
   display: none;
 }
 @media screen and (min-width: 763px) {
+  .name-written {
+    margin-top: 1em;
+  }
   .socials-div-scott {
     display: inline-block;
     width: 10%;

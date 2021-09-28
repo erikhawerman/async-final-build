@@ -197,6 +197,16 @@ $(document).ready(function () {
     );
   });
 
+  // Smoothscroll pil
+  $("#down-to-second-page").click(function () {
+    $("html, body").animate(
+      {
+        scrollTop: $("#second-page").offset().top,
+      },
+      1000
+    );
+  });
+
   //deklarera staplarna som ska fyllas
   const bars = $(".skillbox-to-fill");
   //Ger staplarna sin procentsats som attribut
@@ -251,7 +261,7 @@ $(document).ready(function () {
 
       error: function (e) {
         alert("Det gick inte att läsa XML-filen");
-        console.log("XML reading Failed: ", e);
+        console.error("XML reading Failed: ", e);
       },
 
       success: function (xmlData) {
@@ -301,17 +311,16 @@ $(document).ready(function () {
   const errorBoxPhone = document.getElementById("error-phone");
   const errorBoxTextArea = document.getElementById("error-text-area");
   // Regular expressions
-  const regExName = /\w{3}/g;
   const notEmpty = /.+/;
-  const containsNumber = /\d/;
-  const containsSpecialChars = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/g;
-  const regExMail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+  const regExName = /[^a-zA-ZÅÄÖåäö]/;
+  const regExLength = /^.{3,}$/;
+  const regExMail =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   // Felmeddelanden
   const errorSpecialChar = "Du har skrivit otillåtna tecken";
   const errorTooFewChar = "Du har skrivit för få tecken";
   const errorNotAnEmail = "Email-adressen du angivet är ej giltig";
   const errorNotaNumber = "Du har angivet tecken som ej är siffror";
-  const errorContainsNumber = "Du har angivet tecken som ej är bokstäver";
   const errorIsEmpty = "Text ej angiven";
   //Skicka-knappen
   const submitButton = document.getElementById("submit-form");
@@ -370,19 +379,14 @@ $(document).ready(function () {
   const validateName = function (e) {
     const input = document.getElementById("Name").value;
 
-    if (containsSpecialChars.test(input)) {
+    if (regExName.test(input)) {
       invalidateBox(e.target);
       displayErrorBox(errorBoxName, errorSpecialChar);
       return;
     }
-    if (input.length < 3) {
+    if (!regExLength.test(input)) {
       invalidateBox(e.target);
       displayErrorBox(errorBoxName, errorTooFewChar);
-      return;
-    }
-    if (containsNumber.test(input)) {
-      invalidateBox(e.target);
-      displayErrorBox(errorBoxName, errorContainsNumber);
       return;
     } else {
       validateBox(e.target, errorBoxName);
@@ -390,7 +394,7 @@ $(document).ready(function () {
   };
   const validateEmail = function (e) {
     const input = document.getElementById("e-mail").value;
-    if (!isAnEmail.test(input)) {
+    if (!regExMail.test(input)) {
       invalidateBox(e.target);
       displayErrorBox(errorBoxEmail, errorNotAnEmail);
       return;
@@ -424,14 +428,10 @@ $(document).ready(function () {
     }
   };
   if (nameField && emailField && phoneField) {
-    nameField.addEventListener("keydown", validateName);
-    nameField.addEventListener("focusout", validateName);
-    emailField.addEventListener("keydown", validateEmail);
-    emailField.addEventListener("focusout", validateEmail);
-    phoneField.addEventListener("keydown", validatePhone);
-    phoneField.addEventListener("focusout", validatePhone);
-    textArea.addEventListener("keydown", validateTextArea);
-    textArea.addEventListener("focusout", validateTextArea);
+    nameField.addEventListener("keyup", validateName);
+    emailField.addEventListener("keyup", validateEmail);
+    phoneField.addEventListener("keyup", validatePhone);
+    textArea.addEventListener("keyup", validateTextArea);
   }
 
   // API-fullskärm

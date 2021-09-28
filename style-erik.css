@@ -26,6 +26,12 @@
   font-weight: 600;
   text-align: start;
 }
+/* .skills-container {
+  vertical-align: top;
+  width: 100%;
+  height: fit-content;
+  display: ;
+} */
 .stapel {
   display: inline-block;
   width: 60%;
@@ -73,7 +79,7 @@
 @media screen and (min-width: 763px) {
   .first-page h1 {
     padding-top: 2%;
-    margin: 0;
+    margin: 7vh 0 0 0;
   }
   .first-page p {
     font-size: larger;
@@ -84,7 +90,7 @@
   .skill-container {
     display: inline-block;
     width: 20%;
-    height: auto;
+    vertical-align: top;
   }
   .skill {
     width: 40%;
@@ -100,12 +106,14 @@
   .attribute-container {
     display: inline-block;
     width: 40%;
-    height: 30vh;
-    padding: 0;
+    height: 50vh;
+    padding: 1em;
+    vertical-align: top;
+    margin: 1em;
   }
   .attribute-container img {
-    width: 75%;
-    height: 80%;
+    width: 50%;
+    height: 50%;
   }
   .fourth-page p {
     width: 20%;

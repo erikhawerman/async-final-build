@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hampus</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-hampus.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,100&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--Navbar-->
+    <div class="navbar">
+      <a href="index.html"
+        ><img class="logo" src="images/logo-async.png" alt="placeholder-logo"
+      /></a>
+    </div>
+    <!--First page start-->
+    <div class="first-page">
+      <h1>Hampus Johansson</h1>
+      <h2>Front-end Developer & Designer</h2>
+      <div class="first-page-content">
+        <div class="first-page-pic">
+          <img src="images/hampus-bild.png" alt="" id="hampus-pic" />
+        </div>
+      </div>
+      <div class="parent-box-btn">
+        <div class="first-page-btnbox">
+          <button type="submit" id="down-to-second-page">
+            <img src="images/Arrow-down1.png" alt="submit" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--Second page start-->
+    <div class="second-page" id="second-page">
+      <h1>Välkommen till min personliga sida!</h1>
+      <h2>
+        Jag heter Hampus, jag är 23 år gammal och jag läser systemvetenskap på
+        Örebro universitet. Att utbilda mig inom detta ämne var ett självklart
+        val för mig, eftersom jag har ett stort intresse för datorer,
+        programmering och design.
+      </h2>
+      <img class="second-page-img" src="images/Code.png" alt="" />
+    </div>
+    <!--Third page start-->
+    <div class="third-page">
+      <h1>Min kunskap</h1>
+      <div class="skill-container">
+        <img
+          class="skill"
+          src="https://www.svgrepo.com/show/120930/html.svg"
+          alt=""
+        />
+        <div class="stapel">
+          <div class="stapel-background skillbox-to-fill">
+            <span class="stapel-procent">80</span>
+          </div>
+        </div>
+      </div>
+      <div class="skill-container">
+        <img
+          class="skill"
+          src="https://www.svgrepo.com/show/32369/css.svg"
+          alt=""
+        />
+        <div class="stapel">
+          <div class="stapel-background skillbox-to-fill">
+            <span class="stapel-procent">75</span>
+          </div>
+        </div>
+      </div>
+      <div class="skill-container">
+        <img
+          class="skill"
+          src="https://www.svgrepo.com/show/29753/javascript.svg"
+          alt=""
+        />
+        <div class="stapel">
+          <div class="stapel-background skillbox-to-fill">
+            <span class="stapel-procent">55</span>
+          </div>
+        </div>
+      </div>
+      <div class="third-page-btnbox">
+        <button type="submit" id="up-first-page">
+          <img src="images/Arrow-down3.png" alt="submit" />
+        </button>
+      </div>
+      <!--Footer start-->
+      <footer class="footer">
+        <p>Hampus Johansson, ©2021</p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+    <script src="script-hampus.js"></script>
+  </body>
+</html>

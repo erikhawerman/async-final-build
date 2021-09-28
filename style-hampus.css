@@ -1,0 +1,128 @@
+.parent-box-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.first-page {
+  display: block;
+  color: #eaeaea;
+}
+.first-page h1 {
+  padding-top: 7vh;
+}
+.first-page-pic {
+  margin-top: 4vh;
+  transition: transform 0.5s;
+  padding-bottom: 4em;
+}
+#hampus-pic {
+  width: 60%;
+  border-radius: 50%;
+}
+.first-page-pic:hover {
+  transform: scale(1.02);
+}
+.first-page-btnbox {
+  display: inline-block;
+}
+.second-page {
+  background-image: url("images/kod.jpg");
+}
+.second-page h1 {
+  padding-top: 25%;
+}
+.second-page h2 {
+  font-size: 2vh;
+  padding-top: 2vh;
+}
+.second-page-img {
+  height: 10vh;
+  padding-top: 10vh;
+  align-content: center;
+}
+.third-page {
+  height: 100vh;
+  color: #eaeaea;
+}
+.third-page h1 {
+  padding-top: 25%;
+}
+.third-page-btnbox img {
+  width: 100%;
+}
+.third-page-btnbox button {
+  width: 4vh;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  animation: transform 1.5s ease-in-out infinite alternate;
+}
+.skill-container {
+  height: 22.5%;
+  margin-top: 4vh;
+}
+.stapel {
+  display: inline-block;
+  width: 60%;
+  height: 1.8vh;
+  background-color: white;
+  border-radius: 1.7vh;
+  margin-top: 5%;
+}
+.stapel-background {
+  border-radius: 1.7vh;
+  display: block;
+  width: 0%;
+  height: 100%;
+  background-color: #c3073f;
+}
+.skill {
+  width: 40%;
+  height: 55%;
+}
+.stapel-procent {
+  display: none;
+}
+.third-page {
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .first-page h1 {
+    font-size: 5.5vh;
+    padding-top: 5%;
+  }
+  .first-page-content {
+    display: flex;
+    justify-content: center;
+  }
+  .first-page-pic {
+    width: 42.5vh;
+  }
+  #hampus-pic {
+    width: 100%;
+  }
+  .second-page h1 {
+    font-size: 5vh;
+    padding-top: 5%;
+  }
+  .second-page h2 {
+    font-size: 2.3vh;
+    margin-left: 20vw;
+    margin-right: 20vw;
+  }
+  .third-page h1 {
+    font-size: 5vh;
+    padding-top: 5%;
+  }
+  .third-page-btnbox button {
+    margin-top: 39vh;
+    margin-bottom: 5vh;
+  }
+  .skill-container {
+    display: inline-block;
+    width: 25%;
+    height: auto;
+    margin-top: 12.5vh;
+  }
+}
