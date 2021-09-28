@@ -7,7 +7,7 @@ const maxSlides = slides.length;
 let sliderRunning = true;
 let run;
 const pausePlayDelay = 500;
-const nextSlideDelay = 5000;
+const nextSlideDelay = 2500;
 // Bildspelsrubriken
 const area = document.getElementById("område");
 const areaArray = ["Problemlösning", "Effektivisering", "Spelutveckling"];
@@ -82,8 +82,27 @@ slider.addEventListener("click", function () {
 startTimer = function () {
   run = setInterval(nextSlide, nextSlideDelay);
 };
-startTimer();
 
 const stopTimer = function () {
   clearInterval(run);
 };
+//Skapar en observer callback för slidern
+const sliderCallback = function (entries) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) {
+    stopTimer();
+    return;
+  }
+  startTimer();
+};
+
+// Skapa bildspelsObserver
+const observeSlider = new IntersectionObserver(sliderCallback, {
+  root: null,
+  threshold: 0.2,
+});
+
+// Observera vår slider
+if (slider) {
+  observeSlider.observe(slider);
+}
