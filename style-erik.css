@@ -78,10 +78,6 @@
   .first-page p {
     font-size: larger;
   }
-  .myButton {
-    margin-top: 3%;
-    font-size: 100%;
-  }
   #erik-vector {
     max-width: 20%;
   }
@@ -112,7 +108,7 @@
     height: 80%;
   }
   .fourth-page p {
-    width: 15%;
+    width: 20%;
   }
   .paragraph-container {
     width: 100%;

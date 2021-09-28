@@ -301,18 +301,17 @@ $(document).ready(function () {
   const errorBoxPhone = document.getElementById("error-phone");
   const errorBoxTextArea = document.getElementById("error-text-area");
   // Regular expressions
+  const regExName = /\w{3}/g;
   const notEmpty = /.+/;
   const containsNumber = /\d/;
   const containsSpecialChars = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/g;
+  const regExMail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
   // Felmeddelanden
   const errorSpecialChar = "Du har skrivit otillåtna tecken";
-  const errorTooManyChar =
-    "Du har skrivit för många tecken, max antal tecken är 25";
-  const errorTooFewChar = "Du har skrivit för få tecken, min antal tecken är 3";
+  const errorTooFewChar = "Du har skrivit för få tecken";
   const errorNotAnEmail = "Email-adressen du angivet är ej giltig";
   const errorNotaNumber = "Du har angivet tecken som ej är siffror";
-  const errorContainsNumber =
-    "Du har angivet en siffra, endast bokstäver tillåtna";
+  const errorContainsNumber = "Du har angivet tecken som ej är bokstäver";
   const errorIsEmpty = "Text ej angiven";
   //Skicka-knappen
   const submitButton = document.getElementById("submit-form");
@@ -354,7 +353,7 @@ $(document).ready(function () {
     // Tar bort eventuell röd ram runt fältet
     field.style.border = "";
     // Tar bort eventuellt felmeddelande som stod vid fältet.
-    errorBox.style.display = "none";
+    errorBox.classList.add("hidden");
     // Om fältet redan var validerat ska inte antalet validerade fält öka.
     if (field.validated) return;
     field.validated = true;
@@ -364,7 +363,7 @@ $(document).ready(function () {
   };
   // Gör en röd ram runt det felaktigt ifyllda fältet samt genererar felmeddelande.
   const displayErrorBox = function (box, error) {
-    box.style.display = "inline";
+    box.classList.remove("hidden");
     box.innerHTML = error;
   };
   // Validera namnfältet
@@ -376,15 +375,9 @@ $(document).ready(function () {
       displayErrorBox(errorBoxName, errorSpecialChar);
       return;
     }
-
     if (input.length < 3) {
       invalidateBox(e.target);
       displayErrorBox(errorBoxName, errorTooFewChar);
-      return;
-    }
-    if (input.length > 25) {
-      invalidateBox(e.target);
-      displayErrorBox(errorBoxName, errorTooManyChar);
       return;
     }
     if (containsNumber.test(input)) {
@@ -397,19 +390,9 @@ $(document).ready(function () {
   };
   const validateEmail = function (e) {
     const input = document.getElementById("e-mail").value;
-    if (!/[@]/.test(input) || !/[.]/.test(input)) {
+    if (!isAnEmail.test(input)) {
       invalidateBox(e.target);
       displayErrorBox(errorBoxEmail, errorNotAnEmail);
-      return;
-    }
-    if (input.length < 3) {
-      invalidateBox(e.target);
-      displayErrorBox(errorBoxEmail, errorTooFewChar);
-      return;
-    }
-    if (input.length > 25) {
-      invalidateBox(e.target);
-      displayErrorBox(errorBoxEmail, errorTooManyChar);
       return;
     } else {
       validateBox(e.target, errorBoxEmail);
@@ -426,11 +409,6 @@ $(document).ready(function () {
       invalidateBox(e.target);
       displayErrorBox(errorBoxPhone, errorTooFewChar);
       return;
-    }
-    if (input.length > 25) {
-      invalidateBox(e.target);
-      displayErrorBox(errorBoxPhone, errorTooManyChar);
-      return;
     } else {
       validateBox(e.target, errorBoxPhone);
     }
@@ -446,9 +424,13 @@ $(document).ready(function () {
     }
   };
   if (nameField && emailField && phoneField) {
+    nameField.addEventListener("keydown", validateName);
     nameField.addEventListener("focusout", validateName);
+    emailField.addEventListener("keydown", validateEmail);
     emailField.addEventListener("focusout", validateEmail);
+    phoneField.addEventListener("keydown", validatePhone);
     phoneField.addEventListener("focusout", validatePhone);
+    textArea.addEventListener("keydown", validateTextArea);
     textArea.addEventListener("focusout", validateTextArea);
   }
 
@@ -475,12 +457,12 @@ $(document).ready(function () {
     }
   }
 
+  // Locale storage
+
   //om submit-knappen finns, kör denna kod
   if (submitButton) {
     submitButton.addEventListener("click", function (e) {
       e.preventDefault();
-      console.log(validatedFields);
-      console.log(numberOfFields);
       if (validatedFields !== numberOfFields) {
         if (nameField.validated !== true) invalidateBox(nameField);
         if (phoneField.validated !== true) invalidateBox(phoneField);

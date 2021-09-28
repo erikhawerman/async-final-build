@@ -22,7 +22,7 @@ $(document).ready(function () {
   const attributeCallback = function (entries) {
     entries.forEach(function (e) {
       if (!e.isIntersecting) return;
-      e.target.classList.remove("hidden");
+      e.target.classList.remove("hiddenPushedDown");
       console.log(e.target);
       observeAttributes.unobserve(e.target);
     });
