@@ -165,6 +165,28 @@ $(document).ready(function () {
     skillObserver.observe(skill);
   });
 
+  // Bildspel
+
+  //Skapar en observer callback för slidern
+  const sliderCallback = function (entries) {
+    const [entry] = entries;
+    if (!entry.isIntersecting) {
+      stopTimer();
+      return;
+    }
+    startTimer();
+  };
+
+  // Skapa bildspelsObserver
+  const observeSlider = new IntersectionObserver(sliderCallback, {
+    root: null,
+    threshold: 0.2,
+  });
+
+  // Observera vår slider
+
+  observeSlider.observe(slider);
+
   //AJAX
   function getXML() {
     $.ajax({
